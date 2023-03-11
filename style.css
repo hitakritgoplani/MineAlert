@@ -104,9 +104,8 @@ left: 19px;
 top: 8px;
 }
 .dp {
-height: 40px;
-width: 40px;
-background-color: #626262;
+height: 50px;
+width: 50px;
 border-radius: 50%;
 display: flex;
 align-items: center;
@@ -209,10 +208,12 @@ background-color: var(--Border-color);
 color: white;
 cursor: pointer;
 }
+
 .option1:hover {
 border-left: 5px solid #010058af;
 background-color: var(--Border-color);
 }
+
 .box {
 height: 130px;
 width: 230px;
@@ -259,7 +260,7 @@ font-size: 30px;
 letter-spacing: 3px;
 }
 
-.report-container {
+.list-container {
 min-height: 300px;
 max-width: 1200px;
 margin: 70px auto 0px auto;
@@ -268,7 +269,7 @@ border-radius: 30px;
 box-shadow: 3px 3px 10px rgb(188, 188, 188);
 padding: 0px 20px 20px 20px;
 }
-.report-header {
+.list-header {
 height: 80px;
 width: 100%;
 display: flex;
@@ -278,7 +279,7 @@ padding: 20px 20px 10px 20px;
 border-bottom: 2px solid rgba(0, 20, 151, 0.59);
 }
 
-.recent-Articles {
+.list-main-heading {
 font-size: 30px;
 font-weight: 600;
 color: #5500cb;
@@ -295,12 +296,12 @@ border: none;
 cursor: pointer;
 }
 
-.report-body {
+.list-body {
 max-width: 1160px;
 overflow-x: auto;
 padding: 20px;
 }
-.report-topic-heading,
+.list-topic-heading,
 .item1 {
 width: 1120px;
 display: flex;
