@@ -1,6 +1,13 @@
-
-
+h1{
+	margin-left: 35%;
+	margin-bottom: 70px;
+}
+.container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 .tempchart {
-    width: 600px;
-    height: 600px;
+    width: 100%;
+    height: 80%;
 }

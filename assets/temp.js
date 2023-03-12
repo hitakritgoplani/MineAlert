@@ -51,10 +51,12 @@ function getChart(i, tempData, gid) {
     labels: dates,
     datasets: [
       {
-        label: "Surrounding Temperatures of Group: "+ gid +" (In °C)",
+		borderWidth:4,
+		label: "Surrounding Temperatures of Group: "+ gid +" (In °C)",
         data: temps,
-        backgroundColor: "rgba(255, 26, 104, 1)",
-        borderColor: "rgba(255, 26, 104, 0.5)",
+        backgroundColor: "#567189",
+        borderColor: "#567189",
+		lineWidth: 5
       },
     ],
   };
@@ -64,7 +66,15 @@ function getChart(i, tempData, gid) {
     data,
     options: {
       scales: {
-        y: {
+        x:{
+			grid:{
+				color:'#909090'
+			}
+		},
+		y: {
+			grid:{
+				color:'#909090'
+			},
           beginAtZero: true,
         },
       },
@@ -76,7 +86,7 @@ function getChart(i, tempData, gid) {
     $("div.tempchart").append(`<canvas id="myChart${i}"></canvas>`);
   } else {
     $("canvas#myChart"+i).remove();
-    $("div.tempchart").append(`<canvas id="myChart${i}"></canvas>`); 
+    $("div.tempchart").append(`<canvas style="margin-top:100px" id="myChart${i}"></canvas>`); 
   }
   
   const myChart = new Chart(document.getElementById("myChart"+i), config);
