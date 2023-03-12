@@ -4,12 +4,6 @@ function generateItems() {
   db.collection("miners")
     .doc(docId)
     .onSnapshot((doc) => {
-      let status = "";
-      if (doc.data().heartrate > 120) {
-        status = "Very High";
-      } else {
-        status = "Normal";
-      }
       document.getElementById("minerid").innerText = doc.data().mid;
       document.getElementById("minername").innerText = doc.data().mname;
       document.getElementById("groupid").innerText = doc.data().gid;
