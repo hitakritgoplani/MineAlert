@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Mine Alert</title>
+	<title>MineAlert</title>
 	<link rel="stylesheet" href="./styles/style-index.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +13,6 @@
 </head>
 
 <body>
-
 	<div class="root">
 		<div class="left">
 			<h1><strong>MineAlert</strong></h1>
@@ -31,11 +30,47 @@
 					<input id="password" type="password" placeholder="Enter password">
 				</label>
 
-				<input onclick="window.location.href = 'menu.html';" class="btn" value="Login" id="btn" type="button">
+				<input class="btn" value="Login" id="btn" type="button">
 			</form>
 		</div>
 	</div>
 	<footer>Made by&nbsp;Crewing Bits&nbsp;| 2023.</footer>
+
+	<script type="module">
+		import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.11.0/firebase-app.js';
+		import {
+			getAuth,
+			signInWithEmailAndPassword
+		} from 'https://www.gstatic.com/firebasejs/9.11.0/firebase-auth.js';
+
+		const firebaseApp = initializeApp({
+			apiKey: "AIzaSyCf-M9Iw4Co7fFchxNJ4ZlKGHZwYpULmD4",
+			authDomain: "lbs-admin-side.firebaseapp.com",
+			projectId: "lbs-admin-side",
+			storageBucket: "lbs-admin-side.appspot.com",
+			messagingSenderId: "301821617425",
+			appId: "1:301821617425:web:315052f9001dabe06018b0"
+		});
+
+
+		const loginEmailPassword = async () => {
+			const loginEmail = document.getElementById('email').value
+			const loginPassword = document.getElementById('password').value
+
+			try {
+				await signInWithEmailAndPassword(auth, loginEmail, loginPassword)
+				window.location.href = './menu.html';
+			}
+			catch (error) {
+				console.log(`There was an error: ${error}`)
+				alert("Invalid credentials or user doesn't exists");
+				var login = document.getElementById("login");
+				login.innerHTML = "Login again";
+			}
+		}
+		btn.addEventListener("click", loginEmailPassword)
+		const auth = getAuth(firebaseApp);
+	</script>
 </body>
 
 </html>

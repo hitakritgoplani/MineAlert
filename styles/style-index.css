@@ -5,6 +5,7 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'Inter', sans-serif;
+	background-color: #ECF2FF;
 }
 
 
@@ -35,7 +36,7 @@ form{
 	height: 450px;
 	width: 400px;
 	padding: 11px;
-	border-radius: 5px;
+	border-radius: 10px;
 	border: 2px solid black;
 	font-size: 15px;
 	background-color: #BAD7E9;
@@ -61,9 +62,10 @@ input:not(.btn){
 }
 
 .btn{
+	color:white;
 	background-color: #567189;
-	width: 105px;
-	height: 35px;
+	width: 150px;
+	height: 50px;
 	border-radius: 25px;
 	border: 2px black solid;
 	cursor: pointer;
