@@ -10,7 +10,7 @@
 .list-container {
 	min-height: 300px;
 	max-width: 1200px;
-	margin: 70px auto 0px auto;
+	/* margin: 70px auto 0px auto; */
 	background-color: #ffffff;
 	border-radius: 30px;
 	box-shadow: 3px 3px 10px rgb(188, 188, 188);
@@ -24,7 +24,7 @@
 	align-items: center;
 	justify-content: space-between;
 	padding: 20px 20px 10px 20px;
-	border-bottom: 2px solid rgba(0, 20, 151, 0.59);
+	border-bottom: 2px solid #567189;
 }
 
 .list-main-heading {
@@ -52,10 +52,44 @@
 
 .list-topic-heading,
 .item1 {
-	width: 1120px;
+	font-size: 18px;
+	max-width: 800px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+table td {
+	padding: 15px;
+}
+table thead td{
+	background-color: #54585d;
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 13px;
+	border: 1px solid #54585d;
+}
+table tbody td {
+	color: black;
+	border: 1px solid black;
+	font-weight: bold;
+}
+table tbody tr {
+	background-color: rgb(253, 253, 253);
+}
+table tbody tr:nth-child(odd) {
+	background-color: whitesmoke;
+}
+
+th{
+	border: 1px solid black;
+	color: whitesmoke;
+	height: 45px;
+	background-color: #567189;
 }
 
 .t-op {
