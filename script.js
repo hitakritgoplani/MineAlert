@@ -28,7 +28,7 @@ $(document).ready(function () {
 
   $(".search-miner").click(function (event) {
     event.preventDefault();
-    loadContent("./pages/body_temp.html");
+    loadContent("./pages/miner_profile.html");
   });
 
 });

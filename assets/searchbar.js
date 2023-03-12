@@ -41,7 +41,7 @@ inputBox.onkeyup = (e) => {
   if (userData) {
     icon.onclick = async () => {
         sessionStorage.setItem("docId", await getIdUsingName(userData));
-        loadContent("../pages/body_temp.html");
+        loadContent("../pages/miner_profile.html");
     }
     emptyArray = suggestions.filter((data) => {
       return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
@@ -65,7 +65,7 @@ function select(element) {
   inputBox.value = selectData;
   icon.onclick = async ()=>{
     sessionStorage.setItem("docId", await getIdUsingName(selectData));
-    loadContent("../pages/body_temp.html");
+    loadContent("../pages/miner_profile.html");
   }
   searchWrapper.classList.remove("active");
 }
