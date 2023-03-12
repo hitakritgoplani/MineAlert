@@ -24,15 +24,24 @@ function generateHtml(items) {
 	$('table#new-table').append('<tbody id="childTableTag"></tbody>');
 	let itemsHtml = "";
 	items.forEach((item) => {
-		var itemsHtml = '<tr>' +
+		if(item.heartrate*-1 > 120){
+			var itemsHtml = '<tr>' +
 			'<td>' + item.mid + '</td>' +
 			'<td>' + item.gid + '</td>' +
 			'<td>' + item.mname + '</td>' +
 			'<td>' + item.heartrate * -1 + '</td>' +
-			'<td id="current-status">' + item.status + '</td>' +
+			'<td style="color:red;">' + item.status + '</td>' +
 			'</tr>';
-
-		// $('#childTableTag').clear();	
+		}
+		else{
+			var itemsHtml = '<tr>' +
+			'<td>' + item.mid + '</td>' +
+			'<td>' + item.gid + '</td>' +
+			'<td>' + item.mname + '</td>' +
+			'<td>' + item.heartrate * -1 + '</td>' +
+			'<td style="color:green;">' + item.status + '</td>' +
+			'</tr>';
+		}
 		$('#childTableTag').append(itemsHtml);
 
 	});
