@@ -5,7 +5,7 @@ function generateItems() {
       let i = 0
       snapshot.docs.forEach((doc) => {
         i += 1;
-        getChart(i, doc.data().temperature.slice(-9), doc.data().gid);
+        getTempChart(i, doc.data().temperature.slice(-9), doc.data().gid);
       });
     });
 }
@@ -33,7 +33,7 @@ function getDates() {
   return myArray;
 }
 
-function getChart(i, tempData, gid) {
+function getTempChart(i, tempData, gid) {
   const dates = getDates();
 
   let temps = []
