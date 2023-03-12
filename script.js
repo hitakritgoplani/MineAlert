@@ -23,7 +23,7 @@ $(document).ready(function () {
 
   $("#option4").click(function (event) {
     event.preventDefault();
-    loadContent("./pages/fall_sensor.html");
+    loadContent("./pages/smoke.html");
   });
 
   $(".search-miner").click(function (event) {
