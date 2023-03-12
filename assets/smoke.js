@@ -5,7 +5,7 @@ function generateItems() {
       let i = 0;
       snapshot.docs.forEach((doc) => {
         i += 1;
-        getTempChart(i, doc.data().temperature.slice(-9), doc.data().gid);
+        getSmokeChart(i, doc.data().smoke.slice(-9), doc.data().gid);
       });
     });
 }
@@ -33,18 +33,18 @@ function getDates() {
   return myArray;
 }
 
-function getTempChart(i, tempData, gid) {
+function getSmokeChart(i, smokeData, gid) {
   const dates = getDates();
 
   let temps = [];
 
-  if (tempData.length < 9) {
-    for (let i = 0; i < 9 - tempData.length; i++) {
+  if (smokeData.length < 9) {
+    for (let i = 0; i < 9 - smokeData.length; i++) {
       temps.push(0);
     }
-    temps.push(...tempData);
+    temps.push(...smokeData);
   } else {
-    temps = tempData;
+    temps = smokeData;
   }
 
   const data = {
@@ -52,7 +52,7 @@ function getTempChart(i, tempData, gid) {
     datasets: [
       {
         borderWidth: 4,
-        label: "Surrounding Temperatures of Group: " + gid + " (In °C)",
+        label: "Surrounding Gas Concentration of Group: " + gid,
         data: temps,
         backgroundColor: "#567189",
         borderColor: "#567189",
@@ -81,17 +81,20 @@ function getTempChart(i, tempData, gid) {
     },
   };
 
-  const div = document.getElementById("temp").children;
+  const div = document.getElementById("smoke").children;
   if (div.length === 0) {
-    $("div.tempchart").append(`<canvas id="myTempChart${i}"></canvas>`);
+    $("div.smokechart").append(`<canvas id="mySmokeChart${i}"></canvas>`);
   } else {
-    $("canvas#myTempChart" + i).remove();
-    $("div.tempchart").append(
-      `<canvas style="margin-top:100px" id="myTempChart${i}"></canvas>`
+    $("canvas#mySmokeChart" + i).remove();
+    $("div.smokechart").append(
+      `<canvas style="margin-top:100px" id="mySmokeChart${i}"></canvas>`
     );
   }
 
-  const myChart = new Chart(document.getElementById("myTempChart" + i), config);
+  const myChart = new Chart(
+    document.getElementById("mySmokeChart" + i),
+    config
+  );
 }
 
 generateItems();

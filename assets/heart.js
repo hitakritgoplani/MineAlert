@@ -48,9 +48,4 @@ function generateHtml(items) {
 	document.querySelector(".childTableTag").innerHTML = itemsHtml;
 }
 
-function colorchange() {
-	
-}
-
 generateItems();
-colorchange();
