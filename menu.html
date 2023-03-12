@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./responsive.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="./firebase.js"></script>
+    <script src="./script.js"></script>
+    <title>MineAlert</title>
+  </head>
+
+  <body>
+    <div id="header_placeholder"></div>
+    <div class="main-container">
+      <div id="navbar_placeholder"></div>
+      <div id="content-container" class="main"></div>
+    </div>
+
+    <script>
+      $.get("./widgets/header.html", function (data) {
+        $("#header_placeholder").replaceWith(data);
+      });
+
+      $.get("./widgets/navbar.html", function (data) {
+        $("#navbar_placeholder").replaceWith(data);
+      });
+    </script>
+  </body>
+</html>

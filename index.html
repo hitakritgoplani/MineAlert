@@ -1,34 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="./responsive.css" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
-    <script src="./firebase.js"></script>
-    <script src="./script.js"></script>
-    <title>MineAlert</title>
-  </head>
 
-  <body>
-    <div id="header_placeholder"></div>
-    <div class="main-container">
-      <div id="navbar_placeholder"></div>
-      <div id="content-container" class="main"></div>
-    </div>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mine Alert</title>
+	<link rel="stylesheet" href="./styles/style-index.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
+</head>
 
-    <script>
-      $.get("./widgets/header.html", function (data) {
-        $("#header_placeholder").replaceWith(data);
-      });
+<body>
 
-      $.get("./widgets/navbar.html", function (data) {
-        $("#navbar_placeholder").replaceWith(data);
-      });
-    </script>
-  </body>
+	<div class="root">
+		<div class="left">
+			<h1><strong>MineAlert</strong></h1>
+		</div>
+		<div class="right">
+			<form action="menu.html">
+				<h2 id="login">Login</h2>
+				<label>
+					Enter your email:</br>
+					<input id="email" type="text" placeholder="Enter Email">
+				</label>
+
+				<label>
+					Enter your password:</br>
+					<input id="password" type="password" placeholder="Enter password">
+				</label>
+
+				<input onclick="window.location.href = 'menu.html';" class="btn" value="Login" id="btn" type="button">
+			</form>
+		</div>
+	</div>
+	<footer>Made by&nbsp;Crewing Bits&nbsp;| 2023.</footer>
+</body>
+
 </html>
