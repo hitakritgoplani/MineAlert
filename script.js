@@ -18,7 +18,7 @@ $(document).ready(function () {
 
   $("#option3").click(function (event) {
     event.preventDefault();
-    loadContent("./pages/pulse_rate.html");
+    loadContent("./pages/heart_rate.html");
   });
 
   $("#option4").click(function (event) {
@@ -26,7 +26,7 @@ $(document).ready(function () {
     loadContent("./pages/fall_sensor.html");
   });
 
-  $(".dp").click(function (event) {
+  $(".search-miner").click(function (event) {
     event.preventDefault();
     loadContent("./pages/miner_profile.html");
   });

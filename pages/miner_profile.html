@@ -1,12 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../responsive.css" />
     <title>Document</title>
-</head>
-<body>
-    <p>Miner Profile</p>
-</body>
+  </head>
+  <body>
+    <div class="top-row">
+      <img class="miner-profile-pic" src="../images/profile.png" />
+      <div class="miner-details">
+        <div class="miner-vitals-row">
+            <h3 class="miner1">Miner Id: </h3>
+            <h3 id="minerid" class="miner1"></h3>
+        </div>
+        <div class="miner-vitals-row">
+            <h3 class="miner1">Miner Name: </h3>
+            <h3 id="minername" class="miner1"></h3>
+        </div>
+        <div class="miner-vitals-row">
+            <h3 class="miner1">Group Id: </h3>
+            <h3 id="groupid" class="miner1"></h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="miner-container">
+      <div class="miner-header">
+        <div class="miner-main-heading">Vitals</div>
+      </div>
+      <div>
+        <div class="miner-vitals-row">
+          <h3 class="t-op">Heart Rate: </h3>
+          <h3 id="heartvalue" class="t-op"></h3>
+        </div>
+        <div class="miner-vitals-row">
+            <h3 class="t-op">Accelerometer: </h3>
+            <h3 id="accvalue" class="t-op"></h3>
+          </div>
+      </div>
+    </div>
+    <script src="../assets/miner_profile.js"></script>
+  </body>
 </html>
