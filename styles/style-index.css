@@ -74,6 +74,14 @@ input:not(.btn){
 	cursor: pointer;
 }
 
+.btn:hover{
+	height: 55px;
+	width:180px;
+	border-radius: 25px;
+	font-size: x-large;
+	transition: 0.1s ease-in-out;
+}
+
 footer{
 	display: flex;
 	justify-content: center;
