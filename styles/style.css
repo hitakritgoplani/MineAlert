@@ -5,6 +5,12 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'Inter', sans-serif;
+	
+}
+
+*::selection{
+	color:black;
+	background-color: whitesmoke;
 }
 
 body {
@@ -13,7 +19,6 @@ body {
 	overflow-x: hidden;
 	padding: 0px 0px;
 }
-
 /* style for header */
 
 header {
@@ -75,17 +80,16 @@ span{
 	top: 70px;
 	z-index: 1;
 }
-
 .main {
 	height: calc(100vh - 70px);
 	width: 100%;
 	overflow-y: scroll;
 	overflow-x: hidden;
-	padding: 40px 30px 30px 30px;
+	padding: 20px 30px 30px 30px;
 }
 
 .main::-webkit-scrollbar-thumb {
-	background-image: linear-gradient(to bottom, rgb(0, 0, 85), rgb(0, 0, 50));
+	background-color: black;
 }
 
 .main::-webkit-scrollbar {
@@ -138,7 +142,7 @@ span{
 }
 
 .nav-option:hover {
-	background-color: white;
+	background-color: whitesmoke;
 	cursor: pointer;
 }
 

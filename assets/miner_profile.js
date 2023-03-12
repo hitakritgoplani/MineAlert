@@ -5,7 +5,7 @@ function generateItems() {
     .doc(docId)
     .onSnapshot((doc) => {
       let status = "";
-      if (doc.data().heartrate*-1 > 120) {
+      if (doc.data().heartrate > 120) {
         status = "Very High";
       } else {
         status = "Normal";

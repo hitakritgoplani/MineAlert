@@ -9,39 +9,25 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="top-row">
-      <img class="miner-profile-pic" src="../images/profile.png" />
-      <div class="miner-details">
-        <div class="miner-vitals-row">
-            <p class="miner1">Miner Id:&nbsp;</p>
-            <h4 id="minerid" class="miner1"></h4>
-        </div>
-        <div class="miner-vitals-row">
-            <p class="miner1">Miner Name:&nbsp;</p>
-            <h4 id="minername" class="miner1"></h4>
-        </div>
-        <div class="miner-vitals-row">
-            <p class="miner1">Group Id:&nbsp;</p>
-            <h4 id="groupid" class="miner1"></h4>
-        </div>
-      </div>
-    </div>
-
-    <div class="miner-container">
-      <div class="miner-header">
-        <div class="miner-main-heading"><h2></h2>Vitals<h2></h2></div>
-      </div>
-      <div class="individual-miner">
-        <div class="miner-vitals-row">
-          <h3 class="t-op">Heart Rate: </h3>
-          <h3 id="heartvalue" class="t-op"></h3>
-        </div>
-        <div class="miner-vitals-row">
-            <h3 class="t-op">Accelerometer: </h3>
-            <h3 id="accvalue" class="t-op"></h3>
-          </div>
-      </div>
-    </div>
+	<h1>Miner Profile</h1>
+    <div class="container">
+		<div class="left">
+			<img class="miner-profile-pic" src="../images/miner.jpg" />
+		</div>
+		<div class="line"></div>
+		<div class="right">
+			<div class="details">Details</div>
+			<p class="values">Miner ID:&nbsp;&nbsp;<strong><span id="minerid" class="miner1"></span></strong></p>
+			<div class="between-line"></div>
+			<p class="values">Miner Name:&nbsp;&nbsp;<strong><span id="minername" class="miner1"></span></strong></p>
+			<div class="between-line"></div>
+			<p class="values">Group ID:&nbsp;&nbsp;<strong><span id="groupid" class="miner1"></span></strong></p>
+			<div class="between-line"></div>
+			<p class="values">Current Heart Rate:&nbsp;&nbsp;<strong><span id="heartvalue" class="miner1"></span></strong></p>
+			<div class="between-line"></div>
+			<p class="values">Fall:&nbsp;&nbsp;<strong><span id="accvalue" class="miner1"></span></strong></p>
+		</div>
+	</div>
     <script src="../assets/miner_profile.js"></script>
   </body>
 </html>
