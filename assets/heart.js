@@ -1,5 +1,8 @@
 function generateItems() {
-  let ref = rtdb.ref("miners");
+  var sound = new Audio()
+  sound.src = "../buzzer.mp3"
+  sound.loop = false;
+	let ref = rtdb.ref("miners");
   ref.on("value", (snapshot) => {
     let ss = snapshot.val().sort((a, b) => a.heartrate - b.heartrate);
     let items = [];
@@ -7,6 +10,7 @@ function generateItems() {
       let status = "";
       if (element.heartrate * -1 > 120) {
         status = "Very High";
+		sound.play()
       } else {
         status = "Normal";
       }
