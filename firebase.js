@@ -1,6 +1,7 @@
 const firebaseConfig = {
   apiKey: "AIzaSyAhjWRlsnyoOJF2w4vnXLu3R_2l2-b76NU",
   authDomain: "minealert-fb30d.firebaseapp.com",
+  databaseURL: "https://minealert-fb30d-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "minealert-fb30d",
   storageBucket: "minealert-fb30d.appspot.com",
   messagingSenderId: "910426738411",
@@ -11,3 +12,4 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 var db = firebase.firestore();
+var rtdb = firebase.database();

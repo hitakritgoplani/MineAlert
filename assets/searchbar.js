@@ -1,32 +1,17 @@
 let suggestions = [];
 
 function generateItems() {
-  db.collection("miners")
-    .orderBy("mid")
-    .onSnapshot((snapshot) => {
-      snapshot.docs.forEach((doc) => {
-        suggestions.push(doc.data().mname);
-      });
-    }); 
+  let ref = rtdb.ref("miners")
+  ref.on("value", (snapshot) => {
+    let ss = snapshot.val().sort((a, b) => a.mid - b.mid);
+    ss.forEach(element => {
+      suggestions.push(element.mname)
+    });
+  });
 }
 
 generateItems();
 
-async function getIdUsingName(mname){
-  let docId = ""
-  await db.collection("miners")
-    .where("mname", "==", mname)
-    .get()
-    .then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        docId = doc.id;
-      });
-    })
-    .catch((error) => {
-      console.log("Error getting documents: ", error);
-    });
-  return docId;
-}
 
 const searchWrapper = document.querySelector(".search-input");
 const inputBox = searchWrapper.querySelector("input");
@@ -40,9 +25,9 @@ inputBox.onkeyup = (e) => {
   let emptyArray = [];
   if (userData) {
     icon.onclick = async () => {
-        sessionStorage.setItem("docId", await getIdUsingName(userData));
-        loadContent("../pages/miner_profile.html");
-    }
+      sessionStorage.setItem("mname", userData);
+      loadContent("../pages/miner_profile.html");
+    };
     emptyArray = suggestions.filter((data) => {
       return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
     });
@@ -63,10 +48,10 @@ inputBox.onkeyup = (e) => {
 function select(element) {
   let selectData = element.textContent;
   inputBox.value = selectData;
-  icon.onclick = async ()=>{
-    sessionStorage.setItem("docId", await getIdUsingName(selectData));
+  icon.onclick = async () => {
+    sessionStorage.setItem("mname", selectData);
     loadContent("../pages/miner_profile.html");
-  }
+  };
   searchWrapper.classList.remove("active");
 }
 
@@ -82,14 +67,14 @@ function showSuggestions(list) {
 }
 
 function loadContent(url) {
-    $.ajax({
-      url: url,
-      type: "GET",
-      success: function (data) {
-        $("#content-container").html(data);
-      },
-      error: function () {
-        console.log("Error loading content");
-      },
-    });
-  }
+  $.ajax({
+    url: url,
+    type: "GET",
+    success: function (data) {
+      $("#content-container").html(data);
+    },
+    error: function () {
+      console.log("Error loading content");
+    },
+  });
+}
