@@ -11,5 +11,9 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
+<<<<<<< HEAD
+var db = firebase.firestore();
+=======
 var db = firebase.firestore();
 var rtdb = firebase.database();
+>>>>>>> cb07d3eb164c4a0d18cd11faa3849d404c49f567
