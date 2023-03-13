@@ -1,3 +1,10 @@
+const heartrate_lower_threshold = 60;
+const heartrate_upper_threshold = 120;
+const accelerometer_threshold = 8;
+const temperature_lower_threshold = 10;
+const temperature_upper_threshold = 43;
+const smoke_threshold = 0.8;
+
 $(document).ready(function () {
   loadContent("./pages/dashboard.html");
 
