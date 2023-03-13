@@ -1,11 +1,3 @@
-const heartrate_lower_threshold = 60;
-const heartrate_upper_threshold = 135;
-const accelerometer_threshold = 8;
-const body_temperature_lower_threshold = 34;
-const body_temperature_upper_threshold = 37.6;
-const smoke_threshold = 400;
-
-
 let condition = [];
 
 function generateItems() {
