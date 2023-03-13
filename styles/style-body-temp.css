@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Inter', sans-serif;
+}
+
+.list-container {
+	min-height: 300px;
+	max-width: 1200px;
+	/* margin: 70px auto 0px auto; */
+	background-color: #ffffff;
+	border-radius: 30px;
+	box-shadow: 3px 3px 10px rgb(188, 188, 188);
+	padding: 0px 20px 20px 20px;
+}
+
+.list-header {
+	height: 80px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 20px 20px 10px 20px;
+	border-bottom: 2px solid #567189;
+}
+
+.list-main-heading {
+	font-size: 30px;
+	font-weight: 600;
+	color: black;
+}
+
+.view {
+	height: 35px;
+	width: 90px;
+	border-radius: 8px;
+	background-color: #567189;
+	color: white;
+	font-size: 15px;
+	border: none;
+	cursor: pointer;
+}
+
+.list-body {
+	max-width: 1160px;
+	overflow-x: auto;
+	padding: 20px;
+}
+
+.list-topic-heading,
+.item1 {
+	font-size: 18px;
+	max-width: 800px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+table td {
+	padding: 15px;
+}
+table thead td{
+	background-color: #54585d;
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 13px;
+	border: 1px solid #54585d;
+}
+table tbody td {
+	color: black;
+	border: 1px solid black;
+	font-weight: bold;
+}
+table tbody tr {
+	background-color: rgb(253, 253, 253);
+}
+table tbody tr:nth-child(odd) {
+	background-color: whitesmoke;
+}
+
+th{
+	border: 1px solid black;
+	color: whitesmoke;
+	height: 45px;
+	background-color: #567189;
+}
+
+.t-op {
+	font-size: 18px;
+	letter-spacing: 0px;
+}
