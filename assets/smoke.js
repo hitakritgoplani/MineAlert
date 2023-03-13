@@ -1,13 +1,18 @@
 function generateItems() {
-  db.collection("groups")
-    .orderBy("gid")
-    .onSnapshot((snapshot) => {
-      let i = 0;
-      snapshot.docs.forEach((doc) => {
-        i += 1;
-        getSmokeChart(i, doc.data().smoke.slice(-9), doc.data().gid);
-      });
+  let ref = rtdb.ref("groups")
+  ref.on("value", (snapshot) => {
+    let ss = snapshot.val().sort((a, b) => a.gid - b.gid)
+    let i = 0
+    ss.forEach(element => {
+      i += 1
+      console.log(element.smoke)
+      let ls = []
+      for(let i in element.smoke){
+        ls.push(element.smoke[i])
+      }
+      getSmokeChart(i, ls.slice(-9), element.gid);
     });
+  });
 }
 
 function getDates() {
