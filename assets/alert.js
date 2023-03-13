@@ -1,9 +1,9 @@
 const heartrate_lower_threshold = 60;
-const heartrate_upper_threshold = 120;
+const heartrate_upper_threshold = 135;
 const accelerometer_threshold = 8;
 const temperature_lower_threshold = 10;
-const temperature_upper_threshold = 43;
-const smoke_threshold = 0.8;
+const temperature_upper_threshold = 40;
+const smoke_threshold = 400;
 
 
 let condition = [];
