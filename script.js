@@ -26,11 +26,6 @@ $(document).ready(function () {
     loadContent("./pages/smoke.html");
   });
 
-  $("#option6").click(function (event) {
-    event.preventDefault();
-    loadContent("./index.html");
-  });
-
   $(".search-miner").click(function (event) {
     event.preventDefault();
     loadContent("./pages/miner_profile.html");
