@@ -42,20 +42,12 @@ function generateItems() {
     let items = [];
     ss.forEach((element) => {
       let status = "";
-      if (element.temperature * -1 <= 34) {
+      if (element.temperature * -1 <= body_temperature_lower_threshold) {
         status = "Very Low";
-      } else if (
-        element.temperature * -1 < 37.6 &&
-        element.temperature * -1 > 34
-      ) {
-        status = "Normal";
-      } else if (
-        element.temperature * -1 > 37.6 &&
-        element.temperature * -1 < 40
-      ) {
-        status = "High";
-      } else {
+      } else if (element.temperature * -1 >= body_temperature_upper_threshold) {
         status = "Very High";
+      } else {
+        status = "Normal";
       }
       items.push({
         ...element,
@@ -71,7 +63,7 @@ function generateHtml(items) {
   $("table#new-table").append('<tbody id="childTableTag"></tbody>');
   let itemsHtml = "";
   items.forEach((item) => {
-    if (item.temperature * -1 < 37.6) {
+    if (item.temperature * -1 <= temperature_lower_threshold || item.temperature * -1 >= temperature_upper_threshold) {
       var itemsHtml =
         "<tr>" +
         "<td>" +
@@ -86,7 +78,7 @@ function generateHtml(items) {
         "<td>" +
         item.temperature * -1 +
         "</td>" +
-        '<td style="color:green;">' +
+        '<td style="color:red;">' +
         item.status +
         "</td>" +
         "</tr>";
@@ -105,7 +97,7 @@ function generateHtml(items) {
         "<td>" +
         item.temperature * -1 +
         "</td>" +
-        '<td style="color:red;">' +
+        '<td style="color:green;">' +
         item.status +
         "</td>" +
         "</tr>";
