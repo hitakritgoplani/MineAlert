@@ -43,8 +43,10 @@ function generateItems() {
     let items = [];
     ss.forEach((element) => {
       let status = "";
-      if (element.heartrate * -1 > 120) {
+      if (element.heartrate * -1 > heartrate_upper_threshold) {
         status = "Very High";
+      } else if (element.heartrate * -1 < heartrate_lower_threshold){
+        status = "Very Low";
       } else {
         status = "Normal";
       }
@@ -62,7 +64,7 @@ function generateHtml(items) {
   $("table#new-table").append('<tbody id="childTableTag"></tbody>');
   let itemsHtml = "";
   items.forEach((item) => {
-    if (item.heartrate * -1 > 120) {
+    if (item.heartrate * -1 > heartrate_upper_threshold || item.heartrate * -1 < heartrate_lower_threshold) {
       var itemsHtml =
         "<tr>" +
         "<td>" +

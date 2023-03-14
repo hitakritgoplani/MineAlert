@@ -1,13 +1,10 @@
-var personal_conditions = [];
-var group_conditions = [];
-
 var sound = new Audio();
 sound.src = "../buzzer.mp3";
 sound.loop = false;
 
 function generateItems() {
-  group_conditions.slice(0, group_conditions.length);
-  personal_conditions.slice(0, personal_conditions.length);
+  var personal_conditions = [];
+  var group_conditions = [];
 
   rtdb.ref("miners").on("value", (snapshot) => {
     snapshot.val().forEach((element) => {
@@ -22,14 +19,21 @@ function generateItems() {
         personal_conditions.push(
           `${element.mname}<br>Sudden Acceleration Rate: ${element.accelerometer}<br>Possibility of Fall: High`
         );
+      } else if (
+        element.temperature * -1 >= body_temperature_upper_threshold ||
+        element.temperature * -1 <= body_temperature_lower_threshold
+      ) {
+        personal_conditions.push(
+          `${element.mname}<br>Body Temperature: ${element.accelerometer}<br>Risk: High`
+        );
       }
     });
     if (personal_conditions.length > 0) {
       $(".alert-popup-personal").css("display", "block");
-      createPersonalConditionsList();
-      sound.play();
+      createPersonalConditionsList(personal_conditions);
+      //   sound.play();
     } else {
-      $(".alert-popup-personal").css("display", "none");
+      $(".alert-popup-personal").css("display", "block");
       sound.pause();
     }
   });
@@ -62,55 +66,53 @@ function generateItems() {
     });
     if (group_conditions.length > 0) {
       $(".alert-popup-groups").css("display", "block");
-      createGroupConditionsList();
-      sound.play();
+      createGroupConditionsList(group_conditions);
+      //   sound.play();
     } else {
-      $(".alert-popup-groups").css("display", "none");
+      $(".alert-popup-groups").css("display", "block");
       sound.pause();
     }
   });
 }
 
-function createPersonalConditionsList() {
-  let itemsHtml = `<div style="display:flex; justify-content:space-between">
+function createPersonalConditionsList(personal_conditions) {
+  let itemsHtml = `<div class="alert-list-heading">
   <h3>Personal Alerts</h3><br>
-	<button id="per" onclick="personal_dismiss()">Dismiss</button>
+	<button class="view" id="per" onclick="personal_dismiss()">Dismiss</button>
 </div>`;
   var newArray = personal_conditions.filter(
     (value, index, self) => self.indexOf(value) === index
   );
   newArray.forEach((item) => {
     itemsHtml += `
-		<p>${item}</p>
+		<p class="alert-list-item">${item}</p>
     `;
   });
   document.querySelector(".alert-popup-personal").innerHTML = itemsHtml;
 }
 
-function createGroupConditionsList() {
-  let itemsHtml = `<div style="display:flex; justify-content:space-between">
+function createGroupConditionsList(group_conditions) {
+  let itemsHtml = `<div class="alert-list-heading">
   <h3>Group Alerts</h3><br>
-	<button id="grp" onclick="group_dismiss()">Dismiss</button>
+	<button class="view" id="grp" onclick="group_dismiss()">Dismiss</button>
 </div>`;
   var newArray = group_conditions.filter(
     (value, index, self) => self.indexOf(value) === index
   );
   newArray.forEach((item) => {
     itemsHtml += `
-	<p>${item}</p>
+	<p class="alert-list-item">${item}</p>
 	  `;
   });
   document.querySelector(".alert-popup-groups").innerHTML = itemsHtml;
 }
 
 function personal_dismiss() {
-  personal_conditions.slice(0, personal_conditions.length);
   $(".alert-popup-personal").css("display", "none");
   sound.pause();
 }
 
 function group_dismiss() {
-  group_conditions.slice(0, group_conditions.length);
   $(".alert-popup-groups").css("display", "none");
   sound.pause();
 }
