@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MineAlert</title>
+	<link rel="stylesheet" href="./styles/style-form.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
+	<script src="../script-form.js"></script>
+</head>
+
+<body>
+	<h2>Set Thresholds</h2>
+	<div class="root">
+		<form action="menu.html">
+			<div class="form-root">
+				<label>
+					Enter lower threshold for heartrate:</br>
+					<input id="lower_threshold_heart" type="text" placeholder="Enter lower threshold for heartrate">
+				</label>
+	
+				<label>
+				</br>Enter upper threshold for heartrate:</br>
+					<input id="upper_threshold_heart" type="text" placeholder="Enter upper threshold for heartrate">
+				</label>
+	
+				<label>
+				</br>Enter lower threshold for body temperature:</br>
+					<input id="lower_threshold_body" type="text" placeholder="Enter lower threshold for body temperature">
+				</label>
+	
+				<label>
+				</br>Enter upper threshold for heartrate:</br>
+					<input id="upper_threshold_body" type="text" placeholder="Enter upper threshold for body temperature">
+				</label>
+	
+				<label>
+				</br>Enter threshold for smoke:</br>
+					<input id="smoke_threshold" type="text" placeholder="Enter threshold for smoke">
+				</label>
+
+				<label>
+				</br>Enter lower threshold for surrounding temperature:</br>
+					<input id="lower_threshold_surr" type="text" placeholder="Enter lower threshold for surrounding temperature">
+				</label>
+	
+				<label>
+				</br>Enter upper threshold for surrounding temperature:</br>
+					<input id="upper_threshold_surr" type="text" placeholder="Enter upper threshold for surrounding temperature">
+				</label>
+		
+			</br></br>
+				<input onclick= "getvalues(); window.location.href='menu.html';" class="btn" value="Set" id="set-threshold-btn" type="button">
+			</div>
+		</form>
+	</div>
+</body>
+
+</html>

@@ -1,3 +1,11 @@
+// import { heartrate_lower_threshold } from "../script-form.js";
+// import { heartrate_upper_threshold } from "../script-form.js";
+// import { body_temperature_lower_threshold } from "../script-form";
+// import { body_temperature_upper_threshold } from "../script-form";
+// import { smoke_threshold } from "../script-form.js";
+// import { temperature_lower_threshold } from "../script-form.js";
+// import {temperature_upper_threshold} from "../script-form.js"
+
 var personal_conditions = [];
 var group_conditions = [];
 
@@ -12,8 +20,8 @@ function generateItems() {
   rtdb.ref("miners").on("value", (snapshot) => {
     snapshot.val().forEach((element) => {
       if (
-        element.heartrate * -1 >= heartrate_upper_threshold ||
-        element.heartrate * -1 <= heartrate_lower_threshold
+        element.heartrate * -1 >= {heartrate_upper_threshold} ||
+        element.heartrate * -1 <= {heartrate_lower_threshold}
       ) {
         personal_conditions.push(
           `${element.mname}<br>Heart Rate: ${element.heartrate}<br>Risk: High`
@@ -46,15 +54,15 @@ function generateItems() {
         element.smoke[
           Object.keys(element.smoke)[Object.keys(element.smoke).length - 1]
         ];
-      if (curr_temp >= temperature_upper_threshold) {
+	if (curr_temp >= temperature_upper_threshold) {
         group_conditions.push(
           `Group ${element.gid}<br>Temperature: ${curr_temp}<br>Temperature has crossed upper threshold`
         );
-      } else if (curr_temp <= temperature_lower_threshold) {
+	} else if (curr_temp <= temperature_lower_threshold) {
         group_conditions.push(
           `Group ${element.gid}<br>Temperature: ${curr_temp}<br>Temperature has crossed lower threshold`
         );
-      } else if (curr_smoke >= smoke_threshold) {
+	} else if (curr_smoke >= smoke_threshold) {
         group_conditions.push(
           `Group ${element.gid}<br>Gas Concentration: ${curr_smoke}<br>Gas concentration has crossed upper threshold.`
         );
