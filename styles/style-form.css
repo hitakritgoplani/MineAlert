@@ -1,0 +1,45 @@
+h2{
+	margin-left: 40%;
+}
+
+input:not(.btn){
+	width: 375px;
+	height: 45px;
+	border: 0;
+	border-radius: 5px;
+	margin-top: 3px;
+	padding: 3px;
+}
+
+.form-root{
+	margin-top: 20px;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items:center;
+	justify-content: center;
+	background-color: #567189;
+	width:500px;
+	border: 1px black solid;
+	border-radius:20px;
+}
+
+.root{
+	display: flex ;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+}
+
+.btn{
+	font-size: medium;
+	font-weight: bold;
+	color:#567189;
+	background-color: white;
+	width: 150px;
+	height: 50px;
+	border-radius: 25px;
+	border: 2px black solid;
+	cursor: pointer;
+}
+

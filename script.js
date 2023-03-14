@@ -10,6 +10,11 @@ const smoke_threshold = 1000;
 $(document).ready(function () {
   loadContent("./pages/dashboard.html");
 
+  $("#set-thresholds").click(function (event) {
+    event.preventDefault();
+    loadContent("./pages/form.html");
+  });
+
   $("#option1").click(function (event) {
     event.preventDefault();
     loadContent("./pages/dashboard.html");

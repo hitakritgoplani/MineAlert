@@ -59,6 +59,19 @@ header {
 }
 
 .dp {
+<<<<<<< HEAD
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	color: black;
+}
+.setting{
+	cursor: pointer;
+=======
   height: 50px;
   width: 50px;
   border-radius: 50%;
@@ -70,6 +83,7 @@ header {
 }
 span {
   color: black;
+>>>>>>> df3d22263bed6c1ad30c9eb5beef76ea24bbf45e
 }
 
 .main-container {
