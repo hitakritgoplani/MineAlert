@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles/style-heart-rate.css" />
     <link rel="stylesheet" href="../responsive.css" />
-</head>
-<body>
-    <div class="list-container">
+    <script src="../assets/alert.js"></script>
+  </head>
+  <body>
+    <div class="parent-alert-popup">
+        <div class="alert-popup-personal"></div>
+        <div class="alert-popup-groups"></div>
+      <div class="list-container">
         <div class="list-header">
-            <h1 class="list-main-heading">Heart Rates (In BPM)</h1>
-            <button class="view">Sort</button>
+          <h1 class="list-main-heading">Heart Rates (In BPM)</h1>
+          <button class="view">Sort</button>
         </div>
-    
+
         <div class="list-body">
-            <table id="new-table">
-				<thead>
-					<tr>
-						<th class="t-op">Miner ID</th>
-						<th class="t-op">Group ID</th>
-						<th class="t-op">Miner Name</th>
-						<th class="t-op">Heart Rate</th>
-						<th class="t-op">Status</th>
-					</tr>
-				</thead>
-				<tbody id="childTableTag">
-					<!-- Data from firebase -->
-				</tbody>
-			</table>
+          <table id="new-table">
+            <thead>
+              <tr>
+                <th class="t-op"><a id="mid">Miner ID</a></th>
+                <th class="t-op"><a id="gid">Group ID</a></th>
+                <th class="t-op"><a id="mname">Miner Name</a></th>
+                <th class="t-op"><a id="heartrate">Heart Rate</a></th>
+                <th class="t-op">Status</th>
+              </tr>
+            </thead>
+            <tbody id="childTableTag">
+              <!-- Data from firebase -->
+            </tbody>
+          </table>
         </div>
+      </div>
     </div>
     <script src="../assets/heart.js"></script>
-</body>
+  </body>
 </html>

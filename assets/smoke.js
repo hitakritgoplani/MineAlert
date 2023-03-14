@@ -5,7 +5,6 @@ function generateItems() {
     let i = 0
     ss.forEach(element => {
       i += 1
-      console.log(element.smoke)
       let ls = []
       for(let i in element.smoke){
         ls.push(element.smoke[i])

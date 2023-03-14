@@ -192,7 +192,7 @@ span{
 }
 
 .search-input.active input {
-	border-radius: 10px;
+	border-radius: 10px 10px 0 0;
 	border: 1px solid black;
 }
 
@@ -208,6 +208,7 @@ span{
 	padding: 10px 8px;
 	opacity: 1;
 	pointer-events: auto;
+	border-radius: 0 0 10px 10px;
 }
 
 .autocom-box li {
@@ -237,4 +238,49 @@ span{
 	height: 50px;
 	width: 50px;
 	cursor: pointer;
+}
+
+/* Alert Popup */
+
+.parent-alert-popup {
+	position: relative;
+}
+
+.alert-popup-personal {
+	position: absolute;
+	top: 5%;
+	left: 5%;
+	height: 300px;
+	width: 400px;
+	overflow-y: scroll;
+	background-color: #ffffff;
+	box-shadow: 3px 3px 10px rgb(188, 188, 188);
+	padding: 0px 20px 20px 20px;
+}
+
+.alert-popup-groups {
+	position: absolute;
+	top: 5%;
+	left: 50%;
+	height: 300px;
+	width: 400px;
+	overflow-y: scroll;
+	background-color: #ffffff;
+	box-shadow: 3px 3px 10px rgb(188, 188, 188);
+	padding: 0px 20px 20px 20px;
+}
+
+.alert-popup-personal::-webkit-scrollbar-thumb, 
+.alert-popup-groups::-webkit-scrollbar-thumb {
+	background-color: black;
+}
+
+.alert-popup-personal::-webkit-scrollbar, 
+.alert-popup-groups::-webkit-scrollbar {
+	width: 5px;
+}
+
+.alert-popup-personal::-webkit-scrollbar-track, 
+.alert-popup-groups::-webkit-scrollbar-track{
+	background-color: #9e9e9eb2;
 }

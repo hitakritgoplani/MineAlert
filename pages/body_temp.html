@@ -6,29 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/style-body-temp.css" />
     <link rel="stylesheet" href="../responsive.css" />
+    <script src="../assets/alert.js"></script>
 </head>
 <body>
-    <div class="list-container">
-        <div class="list-header">
-            <h1 class="list-main-heading">Body Temperature</h1>
-            <button class="view">Sort</button>
-        </div>
-    
-        <div class="list-body">
-            <table id="new-table">
-				<thead>
-					<tr>
-						<th class="t-op">Miner ID</th>
-						<th class="t-op">Group ID</th>
-						<th class="t-op">Miner Name</th>
-						<th class="t-op">Body Temperature</th>
-						<th class="t-op">Status</th>
-					</tr>
-				</thead>
-				<tbody id="childTableTag">
-					<!-- Data from firebase -->
-				</tbody>
-			</table>
+    <div class="parent-alert-popup">
+        <div class="alert-popup-personal"></div>
+        <div class="alert-popup-groups"></div>
+
+        <div class="list-container">
+            <div class="list-header">
+                <h1 class="list-main-heading">Body Temperature</h1>
+                <button class="view">Sort</button>
+            </div>
+        
+            <div class="list-body">
+                <table id="new-table">
+                    <thead>
+                        <tr>
+                            <th class="t-op"><a id="mid">Miner ID</a></th>
+                            <th class="t-op"><a id="gid">Group ID</a></th>
+                            <th class="t-op"><a id="mname">Miner Name</a></th>
+                            <th class="t-op"><a id="temperature">Body Temperature</a></th>
+                            <th class="t-op">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="childTableTag">
+                        <!-- Data from firebase -->
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
     <script src="../assets/body.js"></script>

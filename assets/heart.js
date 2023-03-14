@@ -1,16 +1,50 @@
+var filter_hr = "heartrate"
+
+$("#mid").click(function (event) {
+  event.preventDefault();
+  ref_hr.off("value")
+  filter_hr = "mid"
+  generateItems()
+});
+$("#gid").click(function (event) {
+  event.preventDefault();
+  ref_hr.off("value")
+  filter_hr = "gid"
+  generateItems()
+});
+$("#mname").click(function (event) {
+  event.preventDefault();
+  ref_hr.off("value")
+  filter_hr = "mname"
+  generateItems()
+});
+$("#heartrate").click(function (event) {
+  event.preventDefault();
+  ref_hr.off("value")
+  filter_hr = "heartrate"
+  generateItems()
+});
+
+
+var ref_hr = rtdb.ref("miners");
+
 function generateItems() {
-  var sound = new Audio()
-  sound.src = "../buzzer.mp3"
-  sound.loop = false;
-	let ref = rtdb.ref("miners");
-  ref.on("value", (snapshot) => {
-    let ss = snapshot.val().sort((a, b) => a.heartrate - b.heartrate);
+  ref_hr.on("value", (snapshot) => {
+    let ss;
+    if (filter_hr === "heartrate"){
+      ss = snapshot.val().sort((a, b) => a.heartrate - b.heartrate);
+    } else if(filter_hr === "mid"){
+      ss = snapshot.val().sort((a, b) => a.mid - b.mid);
+    } else if (filter_hr === "gid") {
+      ss = snapshot.val().sort((a, b) => a.gid - b.gid);
+    } else if (filter_hr === "mname") {
+      ss = snapshot.val().sort((a, b) => a.mname.localeCompare(b.mname));
+    }
     let items = [];
     ss.forEach((element) => {
       let status = "";
       if (element.heartrate * -1 > 120) {
         status = "Very High";
-		sound.play()
       } else {
         status = "Normal";
       }

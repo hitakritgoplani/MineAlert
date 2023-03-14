@@ -16,13 +16,17 @@ function generateItems() {
           Object.keys(element.smoke)[Object.keys(element.smoke).length - 1]
         ];
 
-      if (curr_temp < body_temperature_lower_threshold) {
-        status += "Temperature higher than threshold";
-      } else if (curr_temp > body_temperature_upper_threshold) {
-        status += "Temperature lower than threshold";
+      if (curr_temp < temperature_lower_threshold) {
+        status += "<strong style='color:red'>Temperature lower than threshold<br></strong>"
+      } else if (curr_temp > temperature_upper_threshold) {
+        status += "<strong style='color:red'>Temperature higher than threshold<br></strong>"
+      } else {
+        status += "<p style='color:green'>Temperature within threshold<br></p>"
       }
       if (curr_smoke > smoke_threshold) {
-        status += "Smoke higher than threshold";
+        status += "<strong style='color:red'>Smoke higher than threshold<br></strong>";
+      } else {
+        status += "<p style='color:green'>Smoke within threshold<br></p>"
       }
       items.push({
         gid: element.gid,
@@ -41,7 +45,7 @@ function generateHtml(items) {
     itemsHtml += `
     <div class="box">
         <div class="text">
-            <h2 class="topic-heading">Team ${item.gid}</h2>
+            <h2 class="topic-heading">Group ${item.gid}</h2>
             <p class="topic">Current Temperature</p>
             <span class="values">
                 <strong>${item.temperature} °C</strong>
@@ -49,6 +53,12 @@ function generateHtml(items) {
             <p class="topic">Gas Concentration</p>
             <span>
             <strong>${item.smoke} ppm</strong>
+            </span>
+            <span>
+            <p class="topic">Note</p>
+            </span>
+            <span>
+            ${item.status}
             </span>
         </div>
     </div>
