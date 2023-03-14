@@ -33,7 +33,7 @@ function generateItems() {
       createPersonalConditionsList(personal_conditions);
       //   sound.play();
     } else {
-      $(".alert-popup-personal").css("display", "block");
+      $(".alert-popup-personal").css("display", "none");
       sound.pause();
     }
   });
@@ -69,7 +69,7 @@ function generateItems() {
       createGroupConditionsList(group_conditions);
       //   sound.play();
     } else {
-      $(".alert-popup-groups").css("display", "block");
+      $(".alert-popup-groups").css("display", "none");
       sound.pause();
     }
   });
