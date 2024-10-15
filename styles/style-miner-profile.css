@@ -42,7 +42,7 @@ h1{
 }
 
 .line{
-	background-color: #ECF2FF;;
+	background-color: white;;
 	height: 100%;
 	width: 10px;
 	z-index: 1
@@ -61,7 +61,7 @@ h1{
 }
 
 .between-line{
-	background-color: #3F4756;;
+	background-color: #3F4756;
 	width: 100%;
 	height: 0.5px;
 	z-index: 1
